@@ -1,0 +1,8 @@
+<h1>welcome to the dashboard</h1>
+
+<!-- Display existing recipes -->
+<% @recipes.each do |recipe| %>
+    <p><strong><%= recipe.title %></strong>: <%= recipe.description  %></p>
+<% end %>
+
+<%= render 'create_recipe_form' %>
