@@ -1,0 +1,16 @@
+<h3>Add your recipe</h3>
+<%= form_for @new_recipe, url: create_recipe_path, method: :post do |f| %>
+  <p>
+    <%= f.label :title %>
+    <br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <br/>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit "Add Recipe" %>
+  </p>
+<% end %>

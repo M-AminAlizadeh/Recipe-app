@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # get 'recipes/index'
+  devise_for :users
 
-  # root "recipes#public_recipes"
-  get "users/shopping_list"
+  devise_scope :user do
+    authenticated :user do
+      root to: 'home#index', as: :authenticated_root
+    end
 
-  resources :foods, only: [:index, :new, :create, :destroy]
+    unauthenticated do
+      root to: 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
+  resources :recipes, only: [:new, :create, :index, :destroy]
+  post 'create_recipe', to: 'home#create_recipe'
+end
+
