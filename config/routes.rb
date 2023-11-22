@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'recipes/index'
+  # get 'recipes/index'
   devise_for :users
 
   devise_scope :user do
@@ -12,9 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/recipes", to: "recipes#index", as: :recipes
-  resources :recipes, only: [:index, :destroy]
-
+  resources :recipes, only: [:new, :create, :index, :destroy]
   post 'create_recipe', to: 'home#create_recipe'
 end
 
