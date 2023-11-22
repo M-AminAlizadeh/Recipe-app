@@ -1,2 +1,9 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>Recipes List</h1>
+
+<% @recipes.each do |recipe| %>
+  <section>
+    <h2><%= recipe.title %></h2>
+    <p><%= recipe.description %></p>
+    <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %>
+  </section>
+<% end %>
