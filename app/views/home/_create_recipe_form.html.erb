@@ -1,5 +1,5 @@
-<%= form_for @new_recipe, url: { action: "create_recipe" } do |f| %>
-  <h3>Add your recipe</h3>
+<h3>Add your recipe</h3>
+<%= form_for @new_recipe, url: create_recipe_path, method: :post do |f| %>
   <p>
     <%= f.label :title %>
     <br/>
