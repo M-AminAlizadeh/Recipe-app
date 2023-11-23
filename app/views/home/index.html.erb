@@ -1,5 +1,12 @@
 <h1>welcome to the dashboard</h1>
 
 <%= link_to "Recipes", recipes_path %>
+<%= link_to "Foods", foods_path %>
 
 <%= render 'create_recipe_form' %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= render 'create_food_form', new_food: @food %>
