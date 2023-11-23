@@ -1,5 +1,5 @@
 <h3>Add your food</h3>
-<%= form_for @new_food, url: create_food_path, method: :post do |f| %>
+<%= form_for new_food, url: create_food_path, method: :post do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
