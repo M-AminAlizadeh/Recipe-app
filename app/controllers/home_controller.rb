@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def index
     @recipes = Recipe.all
     @new_recipe = Recipe.new
+    @new_food = Food.new
   end
 
   def create_recipe

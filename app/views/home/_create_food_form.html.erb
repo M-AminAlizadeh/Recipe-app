@@ -1,0 +1,21 @@
+<h3>Add your food</h3>
+<%= form_for @new_food, url: create_food_path, method: :post do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :measurement_unit %><br>
+    <%= f.select :measurement_unit, ['Unit', 'Kg', 'Liter'] %>
+  </p>
+
+  <p>
+    <%= f.label :unit_price %><br>
+    <%= f.text_field :unit_price %>
+  </p>
+
+  <p>
+    <%= f.submit "Add Food" %>
+  </p>
+<% end %>

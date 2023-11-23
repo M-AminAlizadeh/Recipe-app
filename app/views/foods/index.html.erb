@@ -1,0 +1,25 @@
+<h1>Food List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Measurement Unit</th>
+      <th>Unit Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @foods.present? %>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.unit_price %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Food', new_food_path %>
+
