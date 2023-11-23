@@ -1,12 +1,21 @@
-<h1>welcome to the dashboard</h1>
+<div class="container mt-5">
+  <h1 class="display-3">Welcome to the Dashboard</h1>
 
-<%= link_to "Recipes", recipes_path %>
-<%= link_to "Foods", foods_path %>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <%= link_to "Recipes", recipes_path, class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to "Foods", foods_path, class: "btn btn-success btn-lg btn-block" %>
+    </div>
+  </div>
 
-<%= render 'create_recipe_form' %>
-<br>
-<br>
-<br>
-<br>
-<br>
-<%= render 'create_food_form', new_food: @food %>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <%= render 'create_recipe_form' %>
+    </div>
+    <div class="col-md-6">
+      <%= render 'create_food_form', new_food: @food %>
+    </div>
+  </div>
+</div>
