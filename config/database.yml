@@ -6,7 +6,7 @@ default: &default
   database: recipe_app
   username: postgres
   # change this on your machine
-  password: 1378
+  password: 0120852868
 
 development:
   <<: *default
