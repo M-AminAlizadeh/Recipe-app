@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Food</th>
       <th>Measurement Unit</th>
       <th>Unit Price</th>
     </tr>
@@ -14,12 +14,13 @@
         <tr>
           <td><%= food.name %></td>
           <td><%= food.measurement_unit %></td>
-          <td><%= food.unit_price %></td>
+          <td>$<%= food.unit_price %></td>
+           <td>
+            <%= button_to "Remove", food, method: :delete, data: { confirm: "Are you sure?" } %>
         </tr>
       <% end %>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Food', new_food_path %>
-
+<%= link_to 'New Food', '/' %>

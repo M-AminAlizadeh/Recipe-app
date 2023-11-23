@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # get 'foods/new'
-  # get 'foods/create'
-  # get 'foods/index'
   devise_for :users
 
   devise_scope :user do
@@ -16,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :recipes, only: [:new, :create, :index, :destroy]
   post 'create_recipe', to: 'home#create_recipe'
-  resources :foods, only: [:new, :create, :index]
+  resources :foods, only: [:new, :create, :index, :destroy]
   post 'create_food', to: 'home#create_food'
 end
 

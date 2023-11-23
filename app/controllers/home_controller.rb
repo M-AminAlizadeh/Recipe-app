@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     @recipes = Recipe.all
     @new_recipe = Recipe.new
     @food = Food.new
+    @foods = Food.all
   end
 
   def create_recipe

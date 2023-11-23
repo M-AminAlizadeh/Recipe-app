@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: [:edit, :update, :destroy]
+  # before_action :set_food, only: [:update, :destroy]
 
   def index
     @foods = Food.all
@@ -17,6 +17,12 @@ class FoodsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @food = Food.find(params[:id])
+    @food.destroy
+    redirect_to foods_path, notice: 'Food was successfully deleted.'
   end
 
   private
