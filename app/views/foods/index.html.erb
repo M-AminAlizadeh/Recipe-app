@@ -1,13 +1,13 @@
 <div class="container mt-5">
   <h1>Food List</h1>
 
-  <table class="table table-striped mt-3">
+  <table class="table mt-3">
     <thead>
       <tr>
         <th>Food</th>
         <th>Measurement Unit</th>
         <th>Unit Price</th>
-        <th>Action</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -26,5 +26,11 @@
     </tbody>
   </table>
 
-  <%= link_to 'New Food', '/', class: 'btn btn-primary mt-3' %>
+  <% flash.each do |key, message| %>
+    <div class="alert alert-<%= key %> mt-3" role="alert">
+      <%= message %>
+    </div>
+  <% end %>
+
+  <%= link_to 'New Food', '/', class: "btn btn-primary mt-3" %>
 </div>
