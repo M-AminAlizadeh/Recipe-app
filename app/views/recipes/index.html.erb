@@ -4,3 +4,5 @@
   <% if @recipes.present? %>
     <% @recipes.each do |recipe| %>
       <div class="card mt-3">
+       <div class="card-body">
+          <h2 class="card-title"><%= recipe.title %></h2>
