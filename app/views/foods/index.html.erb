@@ -10,3 +10,21 @@
         <th>Action</th>
       </tr>
     </thead>
+    <tbody>
+      <% if @foods.present? %>
+        <% @foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td>$<%= food.unit_price %></td>
+            <td>
+              <%= button_to "Remove", food, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'New Food', '/', class: 'btn btn-primary mt-3' %>
+</div>
