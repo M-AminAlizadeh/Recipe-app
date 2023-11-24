@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :recipes, only: [:new, :create, :index, :destroy]
+  resources :recipes, only: [:new, :create, :index, :destroy, :show]
   post 'create_recipe', to: 'home#create_recipe'
 end
 
