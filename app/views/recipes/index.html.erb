@@ -1,13 +1,6 @@
-<h1>Recipes List</h1>
+<div class="container mt-5">
+  <h1>Recipes List</h1>
 
-<% if @recipes.present? %>
-  <% @recipes.each do |recipe| %>
-    <section>
-      <h2><%= recipe.title %></h2>
-      <p><%= recipe.description %></p>
-      <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %>
-    </section>
-  <% end %>
-<% else %>
-  <p>No recipes available.</p>
-<% end %>
+  <% if @recipes.present? %>
+    <% @recipes.each do |recipe| %>
+      <div class="card mt-3">
