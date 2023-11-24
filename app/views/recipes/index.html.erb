@@ -7,3 +7,11 @@
        <div class="card-body">
           <h2 class="card-title"><%= recipe.title %></h2>
            <p class="card-text"><%= recipe.description %></p>
+             <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No recipes available.</p>
+  <% end %>
+</div>
