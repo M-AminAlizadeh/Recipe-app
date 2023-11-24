@@ -24,6 +24,10 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, notice: 'Recipe was successfully destroyed.'
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
+
   private
 
   def recipe_params
