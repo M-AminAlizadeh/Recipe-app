@@ -5,6 +5,7 @@
     <section>
       <h2><%= recipe.title %></h2>
       <p><%= recipe.description %></p>
+      <%= link_to "More info", recipe_path(recipe) %>
       <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %>
     </section>
   <% end %>

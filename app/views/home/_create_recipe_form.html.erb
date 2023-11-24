@@ -11,6 +11,20 @@
     <%= f.text_area :description %>
   </p>
   <p>
+    <%= f.label :preparation_time %>
+    <br/>
+    <%= f.number_field :preparation_time %>
+  </p>
+  <p>
+    <%= f.label :cooking_time %>
+    <br/>
+    <%= f.number_field :cooking_time %>
+  </p>
+  <p>
+    <%= f.label :public %>
+    <%= f.check_box :public %>
+  </p>
+  <p>
     <%= f.submit "Add Recipe" %>
   </p>
 <% end %>

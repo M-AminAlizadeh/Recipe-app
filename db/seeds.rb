@@ -1,21 +1,17 @@
-# Users
-users = [
-  { name: 'User1', email: 'user1@example.com', password: 'password123' },
-  { name: 'User2', email: 'user2@example.com', password: 'password456' }
-]
-users.each do |user_data|
-  user = User.find_by(email: user_data[:email])
+5.times do |i|
+  user = User.create!(
+    email: "user#{i + 1}@example.com",
+    password: 'password',
+    password_confirmation: 'password'
+  )
 
-  unless user
-    User.create!(user_data)
-    puts "User '#{user_data[:email]}' created."
+  3.times do |j|
+    user.recipes.create!(
+      title: "Recipe #{j + 1} for User #{i + 1}",
+      description: "This is recipe #{j + 1} for user #{i + 1}.",
+      preparation_time: rand(1..3),
+      cooking_time: rand(20..60),
+      public: [true, false].sample
+    )
   end
 end
-
-# Recipes 
-recipes = [
-  { title: 'Recipe 1', description: 'Description 1', user: User.first },
-  { title: 'Recipe 2', description: 'Description 2', user: User.second }
-]
-
-Recipe.create!(recipes)
