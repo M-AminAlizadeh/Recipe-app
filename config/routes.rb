@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/sign_out_user', to: 'users#sign_out_user', as: 'sign_out_user'
+  get '/public_recipes', to: 'recipes#public_recipes'
   devise_for :users
   devise_scope :user do
     authenticated :user do

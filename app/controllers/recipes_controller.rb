@@ -43,6 +43,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  skip_before_action :authenticate_user!, only: [:public_recipes]
+  def public_recipes
+    @public_recipes = Recipe.where(public: true)
+  end
+
   private
 
   def recipe_params
