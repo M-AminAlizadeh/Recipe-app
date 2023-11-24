@@ -11,9 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :recipes, only: [:new, :create, :index, :destroy]
+  resources :recipes, only: %i[new create index destroy]
   post 'create_recipe', to: 'home#create_recipe'
-  resources :foods, only: [:new, :create, :index, :destroy]
+  resources :foods, only: %i[new create index destroy]
   post 'create_food', to: 'home#create_food'
 end
-

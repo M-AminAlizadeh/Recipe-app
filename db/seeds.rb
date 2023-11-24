@@ -12,7 +12,7 @@ users.each do |user_data|
   end
 end
 
-# Recipes 
+# Recipes
 recipes = [
   { title: 'Recipe 1', description: 'Description 1', user: User.first },
   { title: 'Recipe 2', description: 'Description 2', user: User.second }
