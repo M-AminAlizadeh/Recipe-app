@@ -4,14 +4,20 @@
   <% if @recipes.present? %>
     <% @recipes.each do |recipe| %>
       <div class="card mt-3">
-       <div class="card-body">
+        <div class="card-body">
           <h2 class="card-title"><%= recipe.title %></h2>
-           <p class="card-text"><%= recipe.description %></p>
-             <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+          <p class="card-text"><%= recipe.description %></p>
+          <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
         </div>
       </div>
     <% end %>
   <% else %>
-    <p>No recipes available.</p>
+    <p class="mt-3">No recipes available.</p>
+  <% end %>
+
+  <% flash.each do |key, message| %>
+    <div class="alert alert-<%= key %> mt-3" role="alert">
+      <%= message %>
+    </div>
   <% end %>
 </div>
