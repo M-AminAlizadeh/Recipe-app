@@ -23,7 +23,7 @@
         type: 'PATCH',
         url: '<%= recipe_path(@recipe) %>',
         data: { recipe: { public: publicStatus } },
-        headers: { 'X-CSRF-Token': csrfToken }, // Include the CSRF token in headers
+        headers: { 'X-CSRF-Token': csrfToken },
         success: function(data) {
           console.log('Recipe public status updated successfully');
         },
