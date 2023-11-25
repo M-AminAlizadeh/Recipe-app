@@ -43,6 +43,23 @@ class RecipesController < ApplicationController
     end
   end
 
+  def add_ingredient
+    @recipe = Recipe.find(params[:id])
+    @ingredient = Ingredient.new
+    @foods = Food.all 
+  end
+
+  def create_ingredient
+    @recipe = Recipe.find(params[:id])
+    @ingredient = @recipe.ingredients.build(ingredient_params)
+
+    if @ingredient.save
+      redirect_to @recipe, notice: 'Ingredient added successfully.'
+    else
+      render :add_ingredient
+    end
+  end
+
   skip_before_action :authenticate_user!, only: [:public_recipes]
   def public_recipes
     @public_recipes = Recipe.where(public: true)
@@ -52,5 +69,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :description, :preparation_time, :cooking_time, :public)
+  end
+
+  def ingredient_params
+  params.require(:ingredient).permit(:food_id, :quantity)
   end
 end
