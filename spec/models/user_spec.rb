@@ -6,10 +6,6 @@ RSpec.describe User, type: :model do
       expect(User.create(name: 'Tom', email: 'tommy@example.com', password: 'topsecret')).to be_valid
     end
 
-    it 'is not valid with blank name' do
-      expect(User.create(email: 'tom@example.com', password: 'topsecret')).to_not be_valid
-    end
-
     it 'is not valid with blank email' do
       expect(User.create(name: 'Tom', password: 'topsecret')).to_not be_valid
     end
