@@ -15,11 +15,11 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
+  gem 'capybara'
   gem 'debug', platforms: %i[mri windows]
   gem 'pg'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'capybara'
 end
 
 group :development do
@@ -28,6 +28,6 @@ group :development do
 end
 
 group :test do
-  gem 'selenium-webdriver'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end

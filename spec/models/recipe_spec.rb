@@ -9,7 +9,7 @@ RSpec.describe Recipe, type: :model do
       description: 'A wonderful recipe',
       preparation_time: 30,
       cooking_time: 45,
-      user: user
+      user:
     )
     expect(recipe).to be_valid
   end
@@ -19,7 +19,7 @@ RSpec.describe Recipe, type: :model do
       description: 'A wonderful recipe',
       preparation_time: 30,
       cooking_time: 45,
-      user: user
+      user:
     )
     expect(recipe).to_not be_valid
   end
@@ -29,7 +29,7 @@ RSpec.describe Recipe, type: :model do
       title: 'Delicious Dish',
       preparation_time: 30,
       cooking_time: 45,
-      user: user
+      user:
     )
     expect(recipe).to_not be_valid
   end
@@ -39,7 +39,7 @@ RSpec.describe Recipe, type: :model do
       title: 'Delicious Dish',
       description: 'A wonderful recipe',
       cooking_time: 45,
-      user: user
+      user:
     )
     expect(recipe).to_not be_valid
   end
@@ -49,7 +49,7 @@ RSpec.describe Recipe, type: :model do
       title: 'Delicious Dish',
       description: 'A wonderful recipe',
       preparation_time: 30,
-      user: user
+      user:
     )
     expect(recipe).to_not be_valid
   end
@@ -60,7 +60,7 @@ RSpec.describe Recipe, type: :model do
       description: 'A wonderful recipe',
       preparation_time: -5,
       cooking_time: 45,
-      user: user
+      user:
     )
     expect(recipe).to_not be_valid
   end
@@ -71,7 +71,7 @@ RSpec.describe Recipe, type: :model do
       description: 'A wonderful recipe',
       preparation_time: 30,
       cooking_time: -10,
-      user: user
+      user:
     )
     expect(recipe).to_not be_valid
   end
