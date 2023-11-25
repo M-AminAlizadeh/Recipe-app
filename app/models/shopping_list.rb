@@ -6,6 +6,6 @@ class ShoppingList
   end
 
   def calculate_total_value
-    recipe.ingredients.map { |ingredient| ingredient.value }.sum
+    recipe.ingredients.map(&:value).sum
   end
 end

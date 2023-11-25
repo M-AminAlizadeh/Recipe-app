@@ -68,7 +68,7 @@ class RecipesController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:public_recipes]
   def public_recipes
-    @public_recipes = Recipe.where(public: true).includes(:user, :ingredients => :food)
+    @public_recipes = Recipe.where(public: true).includes(:user, ingredients: :food)
   end
 
   private
