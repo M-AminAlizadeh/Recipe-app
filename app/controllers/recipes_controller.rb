@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  helper RecipesHelper
   def index
     @recipes = Recipe.all
   end
@@ -26,6 +27,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients
   end
 
   def update
@@ -43,14 +45,39 @@ class RecipesController < ApplicationController
     end
   end
 
+  def add_ingredient
+    @recipe = Recipe.find(params[:id])
+    @ingredient = Ingredient.new
+    @foods = Food.all
+  end
+
+  def create_ingredient
+    @recipe = Recipe.find(params[:id])
+    @ingredient = @recipe.ingredients.build(ingredient_params)
+
+    if @ingredient.save
+      redirect_to @recipe, notice: 'Ingredient added successfully.'
+    else
+      render :add_ingredient
+    end
+  end
+
+  def generate_shopping_list
+    @recipe = Recipe.find(params[:id])
+  end
+
   skip_before_action :authenticate_user!, only: [:public_recipes]
   def public_recipes
-    @public_recipes = Recipe.where(public: true)
+    @public_recipes = Recipe.where(public: true).includes(:user, ingredients: :food)
   end
 
   private
 
   def recipe_params
     params.require(:recipe).permit(:title, :description, :preparation_time, :cooking_time, :public)
+  end
+
+  def ingredient_params
+    params.require(:ingredient).permit(:food_id, :quantity)
   end
 end

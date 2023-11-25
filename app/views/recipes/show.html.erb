@@ -13,6 +13,33 @@
 <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> hours</p>
 <p><strong>Description:</strong> <%= @recipe.description %></p>
 
+<%= link_to 'Generate Shopping List', generate_shopping_list_recipe_path(@recipe), class: 'btn btn-primary' %>
+<%= link_to 'Add Ingredient', add_ingredient_recipe_path(@recipe), class: 'btn btn-primary' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Food Name</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.food.name %></td>
+        <td><%= "#{ingredient.quantity} #{ingredient.food.measurement_unit}" %></td>
+        <td><%= "$#{ingredient.value}" %></td>
+        <td>
+          <%= button_to 'Modify', edit_recipe_ingredient_path(@recipe, ingredient), method: :get, class: 'btn btn-warning' %>
+          <%= button_to 'Remove', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <script>
   $(document).ready(function() {
     $('#flexSwitchCheckChecked').change(function() {
