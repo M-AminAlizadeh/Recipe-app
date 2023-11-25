@@ -30,7 +30,6 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
 <details>
   <summary>Server</summary>
   <ul>
@@ -57,7 +56,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
 - **Feature 1** Login and sign up pages.
 - **Feature 2** Recipe list updated by users.
 - **Feature 3** interactive Foods list.
@@ -135,7 +133,6 @@ Open [http://localhost:1080](http://localhost:1080) to view it in your browser.
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
 👤 **Amin Alizadeh**
 
 - GitHub: [@M-AminAlizadeh](https://github.com/M-AminAlizadeh)
@@ -152,7 +149,6 @@ Open [http://localhost:1080](http://localhost:1080) to view it in your browser.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
 - **feature 1** 
 Add [🚀 Live Demo](#live-demo)
 
