@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <h1>Recipes List</h1>
+
+<% if @recipes.present? %>
+  <div class="d-flex flex-column gap-2">
+    <% @recipes.each do |recipe| %>
+      <section class="d-flex justify-content-between align-items-center border border-dark flex-item p-3">
+        <div>
+          <h2><%= recipe.title %></h2>
+          <div class="d-flex">
+            <%= link_to "More info", recipe_path(recipe), class:"btn btn-info" %>
+            <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
+          </div>
+        </div>
+        <p class="flex-item text-left">
+          <%= recipe.description %>
+        </p>
+      </section>
+    <% end %>
+  </div>
+<% else %>
+  <div class="alert alert-warning mt-3" role="alert">No Recipes available.</div>
+<% end %>
+</div>

@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  host: localhost
+  database: recipe_app
+  username: postgres
+  # change this on your machine
+  password: 1378
+
+development:
+  <<: *default
+  database: recipe-app-development
+
+test:
+  <<: *default
+  database: recipe_app_test
+
+production:
+  <<: *default
+  database: recipe_app_production
