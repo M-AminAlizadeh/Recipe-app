@@ -4,7 +4,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -21,9 +20,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Recipe-app] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+> **Recipe App** is a collaborative Rails capstone project at Microverse, developed by Aly Atall and Amin Alizadeh.
+
 **[your_project__name]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -32,9 +32,10 @@
 
 > Describe the tech stack and include only the relevant sections that apply to your project.
 <details>
-  <summary>Client</summary>
+  <summary>Server</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 
@@ -57,18 +58,11 @@
 ### Key Features <a name="key-features"></a>
 
 > Describe between 1-3 key features of the application.
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-- [Live Demo Link](https://google.com)
+- **Feature 1** Login and sign up pages.
+- **Feature 2** Recipe list updated by users.
+- **Feature 3** interactive Foods list.
+- **Feature 4** integration specs.
+- **Feature 5** Bootstrap styles.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,75 +70,63 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-<!--
-Example command:
-```sh
- gem install rails
-```
- -->
+- GitHub account;
+- Git installed on your OS;
+- VSCode (or another code editor);
+- modern browser (supporting HTML5 and CSS3) is highly recommended;
+- [Ruby](https://www.ruby-lang.org/en/documentation/installation/) installed;
+- [Node.js and npm](https://nodejs.org/) installed.
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
+Login to your GitHub account. Clone this repository to your desired folder:
+
+> cd my-folder
+> git clone git@github.com:M-AminAlizadeh/Recipe-app.git
+
+Setup database:
+> sudo -u postgres createuser --interactive --pwprompt
+(provide the username and password described in [config/database.yml](./config/database.yml))
 
 ### Install
 
-Install this project with:
+Install the dependencies:
+> gem install
+> npm install
 
-<!--
-Example command:
-```sh
-  cd my-project
-  gem install
-```
---->
+Create database:
+> bin/rails db:create
+
+(OPTIONAL) Fill the database with sample records:
+> bin/rails db:seed
 
 ### Usage
 
-To run the project, execute the following command:
+To run the server:
+> rails server
 
-<!--
-Example command:
-```sh
-  rails server
-```
---->
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Run tests
 
 To run tests, run the following command:
+> rspec
 
-<!--
-Example command:
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
+You can also check linter errors by running these commands:
+> rubocop
 
-### Deployment
+For testing the confirmation emails:
+> gem install mailcatcher
 
-You can deploy this project using:
-
-<!--
-Example:
-```sh
-```
- -->
+Open [http://localhost:1080](http://localhost:1080) to view it in your browser.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -153,17 +135,15 @@ Example:
 ## 👥 Authors <a name="authors"></a>
 
 > Mention all of the collaborators of this project.
-👤 **Author1**
+👤 **Amin Alizadeh**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@M-AminAlizadeh](https://github.com/M-AminAlizadeh)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/m-amin-alizadeh/)
 
-👤 **Author2**
+👤 **Aly Atalla**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@AlyAtalla](https://github.com/AlyAtalla)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aly-atalla-8b83a0231/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,9 +152,9 @@ Example:
 ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features you will add to the project.
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- **feature 1** 
+Add [🚀 Live Demo](#live-demo)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,8 +172,8 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-If you like this project...
+> 
+If you like this project, Give it a star, and check out more of our work.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -201,25 +181,11 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-I would like to thank...
+> 
+We would like to thank Microverse for Providing such a motivating and wonderfully diverse learning environment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
