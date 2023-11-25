@@ -63,7 +63,8 @@
 - **Feature 3** interactive Foods list.
 - **Feature 4** integration specs.
 - **Feature 5** Bootstrap styles.
-
+- **Feature 6** Create-Read-Update-Delete Recipes and Ingredients.
+ 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
