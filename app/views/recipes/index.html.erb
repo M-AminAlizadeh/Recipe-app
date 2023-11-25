@@ -10,10 +10,5 @@
       <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %>
     </section>
   <% end %>
-
-  <% flash.each do |key, message| %>
-    <div class="alert alert-<%= key %> mt-3" role="alert">
-      <%= message %>
-    </div>
-  <% end %>
+<% end %>
 </div>
