@@ -1,44 +1,48 @@
-<h1><%= @recipe.title %></h1>
-
-<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> hours</p>
-
-<p>
-  <strong>Public:</strong>
-  <div class="form-check form-switch">
-    <label class="form-check-label" for="flexSwitchCheckChecked">Toggle Public:</label>
-    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" <%= @recipe.public ? 'checked' : '' %>>
+<div class="container">
+  <h1 class="text-center text-capitalize"><%= @recipe.title %></h1>
+  
+  
+  <div class='d-flex justify-content-between'>
+    <p>Preparation Time: <%= @recipe.preparation_time %> hours</p>
+    <div class="form-check form-switch">
+      <label class="form-check-label" for="flexSwitchCheckChecked">Public:</label>
+      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" <%= @recipe.public ? 'checked' : '' %>>
+    </div>
   </div>
-</p>
-
-<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> hours</p>
-<p><strong>Description:</strong> <%= @recipe.description %></p>
-
-<%= link_to 'Generate Shopping List', generate_shopping_list_recipe_path(@recipe), class: 'btn btn-primary' %>
-<%= link_to 'Add Ingredient', add_ingredient_recipe_path(@recipe), class: 'btn btn-primary' %>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Food Name</th>
-      <th>Quantity</th>
-      <th>Value</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @recipe.ingredients.each do |ingredient| %>
+  
+  <p>Cooking Time <%= @recipe.cooking_time %> hours</p>
+  <p>Description: <%= @recipe.description %></p>
+  
+  <div class="d-flex justify-content-between">
+    <%= link_to 'Generate Shopping List', generate_shopping_list_recipe_path(@recipe), class: 'btn btn-primary' %>
+    <%= link_to 'Add Ingredient', add_ingredient_recipe_path(@recipe), class: 'btn btn-primary' %>
+  </div>
+  
+  <hr/>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= ingredient.food.name %></td>
-        <td><%= "#{ingredient.quantity} #{ingredient.food.measurement_unit}" %></td>
-        <td><%= "$#{ingredient.value}" %></td>
-        <td>
-          <%= button_to 'Modify', edit_recipe_ingredient_path(@recipe, ingredient), method: :get, class: 'btn btn-warning' %>
-          <%= button_to 'Remove', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-        </td>
+        <th>Food Name</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <tr>
+          <td><%= ingredient.food.name %></td>
+          <td><%= "#{ingredient.quantity} #{ingredient.food.measurement_unit}" %></td>
+          <td><%= "$#{ingredient.value}" %></td>
+          <td class="d-flex">
+            <%= button_to 'Modify', edit_recipe_ingredient_path(@recipe, ingredient), method: :get, class: 'btn btn-warning' %>
+            <%= button_to 'Remove', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <script>
   $(document).ready(function() {

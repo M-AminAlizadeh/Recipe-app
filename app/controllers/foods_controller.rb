@@ -1,6 +1,4 @@
 class FoodsController < ApplicationController
-  # before_action :set_food, only: [:update, :destroy]
-
   def index
     @foods = Food.all
   end

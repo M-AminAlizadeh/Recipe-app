@@ -20,7 +20,6 @@ class IngredientsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @ingredient = @recipe.ingredients.find(params[:id])
     @ingredient.destroy
-    # redirect_to @recipe
 
     respond_to do |format|
       format.html { redirect_to @recipe, notice: 'Ingredient was successfully removed.' }
