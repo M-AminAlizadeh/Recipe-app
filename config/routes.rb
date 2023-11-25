@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     member do
       get 'add_ingredient', to: 'recipes#add_ingredient'
       post 'create_ingredient', to: 'recipes#create_ingredient'
+      get 'generate_shopping_list', to: 'recipes#generate_shopping_list'
     end
     resources :ingredients
   end

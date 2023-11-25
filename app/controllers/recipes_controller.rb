@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  helper RecipesHelper
   def index
     @recipes = Recipe.all
   end
@@ -47,7 +48,7 @@ class RecipesController < ApplicationController
   def add_ingredient
     @recipe = Recipe.find(params[:id])
     @ingredient = Ingredient.new
-    @foods = Food.all 
+    @foods = Food.all
   end
 
   def create_ingredient
@@ -61,9 +62,13 @@ class RecipesController < ApplicationController
     end
   end
 
+  def generate_shopping_list
+    @recipe = Recipe.find(params[:id])
+  end
+
   skip_before_action :authenticate_user!, only: [:public_recipes]
   def public_recipes
-     @public_recipes = Recipe.where(public: true).includes(:user, :ingredients => :food)
+    @public_recipes = Recipe.where(public: true).includes(:user, :ingredients => :food)
   end
 
   private
