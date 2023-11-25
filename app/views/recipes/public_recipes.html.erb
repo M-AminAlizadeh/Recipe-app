@@ -1,12 +1,18 @@
-<h2>Public Recipes</h2>
-<div class="recipe-list">
-  <% @public_recipes.each do |recipe| %>
-    <div class="recipe">
-      <h3><%= recipe.title %></h3>
-      <p>By: <%= recipe.user.name %></p>
-      <p>Total Food Items: <%= recipe.ingredients.count %></p>
-      <p>Total Price: <%= calculate_total_price(recipe) %></p>
-    </div>
-  <% end %>
+<div class="container mt-5"></div>
+  <h1 class='text-center'>Public Recipes</h1>
+  <div class="d-flex flex-column gap-2">
+    <% @public_recipes.each do |recipe| %>
+      <div class="d-flex justify-content-between align-items-center border border-dark flex-item p-3 mx-auto w-75">
+        <div class="d-flex flex-column">
+          <h2 class="text-capitalize"><%= recipe.title %></h2>
+          <p>By: <%= recipe.user.name %></p>
+        </div>
+        <div class="d-flex flex-column">
+          <p>Total Food Items: <%= recipe.ingredients.count %></p>
+          <p>Total Price: $<%= calculate_total_price(recipe) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
