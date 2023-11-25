@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients
   end
 
   def update
@@ -72,6 +73,6 @@ class RecipesController < ApplicationController
   end
 
   def ingredient_params
-  params.require(:ingredient).permit(:food_id, :quantity)
+    params.require(:ingredient).permit(:food_id, :quantity)
   end
 end

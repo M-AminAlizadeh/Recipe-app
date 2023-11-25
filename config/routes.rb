@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
     resources :ingredients, only: [:edit, :destroy]
   end
-
+  
   resources :foods, only: [:new, :create, :index, :destroy]
 
   post 'create_recipe', to: 'home#create_recipe'

@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_recipe
+  before_action :set_ingredient, only: [:destroy]
 
   def new
     @ingredient = Ingredient.new
@@ -15,10 +16,26 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    @ingredient = @recipe.ingredients.find(params[:id])
+    @ingredient.destroy
+    # redirect_to @recipe
+
+    respond_to do |format|
+      format.html { redirect_to @recipe, notice: 'Ingredient was successfully removed.' }
+      format.js
+    end
+  end
+
   private
 
   def set_recipe
     @recipe = Recipe.find(params[:recipe_id])
+  end
+
+  def set_ingredient
+    @ingredient = @recipe.ingredients.find(params[:id])
   end
 
   def ingredient_params
