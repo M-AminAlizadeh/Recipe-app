@@ -28,6 +28,20 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def edit
+    @ingredient = @recipe.ingredients.find(params[:id])
+    @foods = Food.all
+  end
+
+  def update
+    @ingredient = @recipe.ingredients.find(params[:id])
+    if @ingredient.update(ingredient_params)
+      redirect_to @recipe, notice: 'Ingredient was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def set_recipe

@@ -13,12 +13,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :recipes, only: [:new, :create, :index, :destroy, :show, :update] do
+  resources :recipes do
     member do
       get 'add_ingredient', to: 'recipes#add_ingredient'
       post 'create_ingredient', to: 'recipes#create_ingredient'
     end
-    resources :ingredients, only: [:edit, :destroy]
+    resources :ingredients
   end
   
   resources :foods, only: [:new, :create, :index, :destroy]

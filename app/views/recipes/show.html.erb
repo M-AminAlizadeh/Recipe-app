@@ -32,7 +32,8 @@
         <td><%= "#{ingredient.quantity} #{ingredient.food.measurement_unit}" %></td>
         <td><%= "$#{ingredient.value}" %></td>
         <td>
-            <%= button_to 'Remove', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <%= button_to 'Modify', edit_recipe_ingredient_path(@recipe, ingredient), method: :get, class: 'btn btn-warning' %>
+          <%= button_to 'Remove', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </td>
 
       </tr>
