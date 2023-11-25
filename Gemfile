@@ -19,6 +19,7 @@ group :development, :test do
   gem 'pg'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do
@@ -27,7 +28,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
 end
