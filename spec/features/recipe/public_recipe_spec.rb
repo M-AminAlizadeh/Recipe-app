@@ -18,8 +18,8 @@ RSpec.describe 'Public Recipes Page', type: :feature do
   it 'displays public recipes' do
     visit public_recipes_path
 
-    @public_recipes.each do |recipe|
-      expect(page).to have_content("Public Recipes")
+    @public_recipes.each do |_recipe|
+      expect(page).to have_content('Public Recipes')
     end
   end
 end
