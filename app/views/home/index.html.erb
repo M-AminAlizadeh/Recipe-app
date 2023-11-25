@@ -1,3 +1,40 @@
 <h1>welcome to the dashboard</h1>
 <%= render 'create_recipe_form' %>
 <%= render 'create_food_form', new_food: @food %>
+<div class="container mt-5">
+  <h1 class="display-3">Welcome to the Dashboard</h1>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <%= link_to "Recipes", recipes_path, class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to "Foods", foods_path, class: "btn btn-success btn-lg btn-block" %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <%= render 'create_recipe_form' %>
+    </div>
+    <div class="col-md-6">
+      <%= render 'create_food_form', new_food: @food %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %> alert-dismissible fade show" role="alert">
+          <%= value %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

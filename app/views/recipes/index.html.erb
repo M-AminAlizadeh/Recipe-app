@@ -1,4 +1,5 @@
-<h1>Recipes List</h1>
+<div class="container mt-5">
+  <h1>Recipes List</h1>
 
 <% if @recipes.present? %>
   <% @recipes.each do |recipe| %>
@@ -9,6 +10,10 @@
       <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %>
     </section>
   <% end %>
-<% else %>
-  <p>No recipes available.</p>
-<% end %>
+
+  <% flash.each do |key, message| %>
+    <div class="alert alert-<%= key %> mt-3" role="alert">
+      <%= message %>
+    </div>
+  <% end %>
+</div>
