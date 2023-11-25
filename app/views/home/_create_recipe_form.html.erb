@@ -8,6 +8,20 @@
           <%= f.label :title, class: 'form-label' %>
           <%= f.text_field :title, class: 'form-control' %>
         </div>
+        <p>
+          <%= f.label :preparation_time %>
+          <br/>
+          <%= f.number_field :preparation_time %>
+        </p>
+        <p>
+          <%= f.label :cooking_time %>
+          <br/>
+          <%= f.number_field :cooking_time %>
+        </p>
+        <p>
+          <%= f.label :public %>
+          <%= f.check_box :public %>
+        </p>
         <div class="mb-3">
           <%= f.label :description, class: 'form-label' %>
           <%= f.text_area :description, class: 'form-control' %>

@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description)
+    params.require(:recipe).permit(:title, :description, :preparation_time, :cooking_time, :public)
   end
 
   def food_params
