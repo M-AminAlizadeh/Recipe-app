@@ -35,8 +35,29 @@
           <%= button_to 'Modify', edit_recipe_ingredient_path(@recipe, ingredient), method: :get, class: 'btn btn-warning' %>
           <%= button_to 'Remove', [@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </td>
-
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<script>
+  $(document).ready(function() {
+    $('#flexSwitchCheckChecked').change(function() {
+      var publicStatus = $(this).is(':checked');
+      var csrfToken = $('meta[name="csrf-token"]').attr('content');
+      
+      $.ajax({
+        type: 'PATCH',
+        url: '<%= recipe_path(@recipe) %>',
+        data: { recipe: { public: publicStatus } },
+        headers: { 'X-CSRF-Token': csrfToken },
+        success: function(data) {
+          console.log('Recipe public status updated successfully');
+        },
+        error: function(xhr, status, error) {
+          console.error('Error updating recipe public status:', error);
+        }
+      });
+    });
+  });
+</script>
